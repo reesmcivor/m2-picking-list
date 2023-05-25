@@ -2,6 +2,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
 	\Magento\Framework\Component\ComponentRegistrar::MODULE,
-	'ReesMcIvor/PickingList',
+	'ReesMcIvor_PickingList',
 	__DIR__
 );
