@@ -40,7 +40,7 @@ class Index extends \Magento\Framework\App\Action\Action
                     'Sku' => $item->getSku(),
                     'Quantity' => $item->getQtyOrdered(),
                     'Price' => $item->getPrice(),
-                    'Attributes' => $this->getProductAttributes($item)
+                    'Attributes' => $this->getProductAttributes($item),
                 ];
             }
             $ordersData[] = [
@@ -70,9 +70,10 @@ class Index extends \Magento\Framework\App\Action\Action
         if ($product) {
             $productAttributes = $product->getAttributes();
             $attributesToMap = [
+                'ean',
                 'rm_u_classification',
                 'rm_tray_type',
-                'rm_clamp_type'
+                'rm_clamp_type',
             ];
 
             foreach ($attributesToMap as $attribute) {
