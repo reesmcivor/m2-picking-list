@@ -77,8 +77,10 @@ class Index extends \Magento\Framework\App\Action\Action
 
             foreach ($attributesToMap as $attribute) {
                 if ($productAttributes[$attribute]) {
-                    $attributes[$attribute] = $productAttributes[$attribute]
-                        ->getFrontend()->getValue($product);
+                    $attributes[] = [
+                        'code' => $attribute,
+                        'value' => $productAttributes[$attribute]->getFrontend()->getValue($product)
+                    ];
                 }
             }
         }
